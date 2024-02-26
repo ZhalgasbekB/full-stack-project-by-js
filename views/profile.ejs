@@ -1,0 +1,23 @@
+<%- include('base') %>
+<div class="center">
+    <h1>User Profile</h1>
+    <h3 style="color: black;">Welcome, <%= username %>!</h3>
+
+    <% if (typeof errorMessage !== 'undefined') { %>
+        <p style="color: red;"><%= errorMessage %></p>
+    <% } %>
+    <% if (typeof successMessage !== 'undefined') { %>
+        <p style="color: green;"><%= successMessage %></p>
+    <% } %>
+
+    <form action="/profile/delete" method="POST">
+        <button class="type2_button" type="submit">Delete Account</button>
+    </form>
+
+    <form action="/profile/pass" method="POST">
+        <input type="password" name="password" placeholder="Old Password">
+        <input type="password" name="password2" placeholder="New Password">
+        <input type="password" name="password3" placeholder="Сonfirm New Password">
+        <button class="type2_button" type="submit">Change Password</button>
+    </form>
+</div>

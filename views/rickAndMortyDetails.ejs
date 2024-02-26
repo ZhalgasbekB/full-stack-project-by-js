@@ -1,0 +1,21 @@
+<%- include('base') %>
+<div id="container">
+  <% if (character) { %>
+  <div class="character-details">
+    <h1><%= character.name %></h1>
+    <img
+      src="<%= character.image %>"
+      alt="<%= character.name %>"
+      class="character-image"
+    />
+    <p>Status: <%= character.status %></p>
+    <p>Species: <%= character.species %></p>
+    <p>Gender: <%= character.gender %></p>
+    <p>Origin: <%= character.origin.name %></p>
+    <p>Last Known Location: <%= character.location.name %></p>
+    <a href="javascript:history.back()" class="back-link">Back</a>
+  </div>
+  <% } else { %>
+  <p class="error-message">Character not found.</p>
+  <% } %>
+</div>

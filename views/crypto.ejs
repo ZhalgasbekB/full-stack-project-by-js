@@ -1,0 +1,16 @@
+<%- include('base') %>
+<div class="crypto-container">
+  <h1 class="h1">Top 10 Cryptocurrencies by Market Cap</h1>
+  <ul class="ul">
+    <% cryptos.forEach(crypto => { %>
+    <li class="li">
+      <a href="/crypto/<%= crypto.id %>">
+        <img class="img" src="<%= crypto.image %>" alt="<%= crypto.name %>" style="width: 50px" />
+        <%= crypto.name %> (<%= crypto.symbol.toUpperCase() %>): $<%= crypto.current_price %>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+</div>
+
+ 

@@ -1,0 +1,25 @@
+<%- include('base') %>
+<div class="character-container">
+  <% if (characters.length > 0) { %>
+  <ul class="character-list">
+    <% characters.forEach(character => { %>
+    <li class="character-item">
+      <a href="/rickAndMorty/<%= character.characterId %>">
+        <img
+          src="<%= character.image %>"
+          alt="<%= character.name %>"
+          class="character-image"
+        />
+        <span class="character-info"
+          ><%= character.name %> - <%= character.status %></span
+        >
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+  <% } else { %>
+  <p class="no-characters">No characters found.</p>
+  <% } %> <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+  <p class="error-message"><%= errorMessage %></p>
+  <% } %>
+</div>

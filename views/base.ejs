@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FINAL 4</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <div class="logo">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png"
+              alt="Logo"
+            />
+          </div>
+          <% if (loggedIn) { %>
+          <li><a href="/">Home</a></li>
+          <li><a href="/news">News</a></li>
+          <li><a href="/crypto">Сryptocurrency </a></li>
+          <li><a href="/rickAndMorty">RickAndMorty</a></li>
+          <li><a href="/profile"><%= username %></a></li>
+          <li><a href="/logout">Logout</a></li>
+          <% } %> <% if (admin) { %>
+          <li><a href="/admin">Admin</a></li>
+          <% } %> <% if (!loggedIn) { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

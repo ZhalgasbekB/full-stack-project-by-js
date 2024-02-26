@@ -1,0 +1,76 @@
+<%- include('base') %>
+<div class="center">
+  <% if (typeof errorMessage !== 'undefined') { %>
+  <p class="error-message"><%= errorMessage %></p>
+  <% } %> <% if (typeof successMessage !== 'undefined') { %>
+  <p class="success-message"><%= successMessage %></p>
+  <% } %>
+  <table class="user-table">
+    <tr>
+      <th>Username</th>
+      <th>Is Admin</th>
+      <th>Actions</th>
+    </tr>
+    <% users.forEach(user => { %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.isAdmin ? 'Yes' : 'No' %></td>
+      <td>
+        <form
+          action="/admin/update/<%= user._id %>"
+          method="POST"
+          class="update-form"
+        >
+          <label for="newUsername">New Username:</label>
+          <input
+            type="text"
+            id="newUsername"
+            name="newUsername"
+            value="<%= user.username %>"
+            required
+          /><br />
+          <label for="password">New Password:</label>
+          <input type="password" id="password" name="password" /><br />
+          <label for="isAdmin">Is Admin:</label>
+          <input
+            type="checkbox"
+            id="isAdmin"
+            name="isAdmin"
+            <%
+            if
+            (user.isAdmin)
+            {
+            %
+          />checked<% } %>><br />
+          <button class="type2_button update-button" type="submit">
+            Update
+          </button>
+        </form>
+        <form
+          action="/admin/delete/<%= user._id %>"
+          method="POST"
+          class="delete-form"
+        >
+          <button class="type2_button delete-button" type="submit">
+            Delete
+          </button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+    <h2>Create New User</h2>
+    <form action="/admin/create" method="POST" class="create-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required /><br />
+      <label for="password">Password:</label>
+      <input type="password" class="password" name="password" required /><br />
+      <label for="password">Confirm Password:</label>
+      <input type="password" class="password" name="password2" required /><br />
+      <label for="isAdmin">Is Admin:</label>
+      <input type="checkbox" id="isAdmin" name="isAdmin" /><br />
+      <button class="type2_button create-button" type="submit">
+        Create User
+      </button>
+    </form>
+  </table>
+</div>

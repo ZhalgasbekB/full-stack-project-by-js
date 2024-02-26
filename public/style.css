@@ -1,0 +1,620 @@
+/* slider */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.post {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: cover;
+  display: none;
+  border-radius: 10px;
+}
+
+.carousel-slide img.active {
+  display: block;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+}
+
+.carousel-button.left {
+  left: 0;
+}
+
+.carousel-button.right {
+  right: 0;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* form */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+.post-section {
+  margin-bottom: 20px;
+}
+
+.post-heading {
+  color: #333;
+}
+
+.post {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.post-title {
+  margin: 0 0 10px 0;
+  color: #007bff;
+}
+
+.post-description {
+  margin: 0;
+}
+
+.login-prompt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.post-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-heading {
+  color: #333;
+}
+
+.post-form .form-group {
+  margin-bottom: 15px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.form-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-button:hover {
+  background-color: #004494;
+}
+
+.login-prompt {
+  text-align: center;
+}
+
+.login-link {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+/* posts */
+#container {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* Character details styles */
+.character-details {
+  text-align: center;
+}
+
+.character-details h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.character-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Error message styles */
+.error-message {
+  text-align: center;
+  color: #cc0000;
+  margin-top: 20px;
+}
+
+/* Additional styles for aesthetic enhancements */
+p.status,
+p.species,
+p.gender,
+p.origin,
+p.location {
+  background-color: #e7e7e7;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin: 5px 0;
+}
+
+.character-container {
+  padding: 20px;
+}
+
+.character-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.character-item {
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.character-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.character-info {
+  font-size: 16px;
+}
+
+.no-characters {
+  color: #666;
+  font-size: 16px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+/* kdgevxljdghvedhk */
+
+/* Center everything in <div class="center"> */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Make it at least as tall as the viewport */
+  padding: 20px;
+}
+
+/* Style for <h1> inside .center */
+.center h1 {
+  margin-bottom: 20px;
+}
+
+/* General style for input fields */
+.center input[type="text"],
+.center input[type="password"] {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside input */
+  margin: 10px 0; /* Margin around each input */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 5px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Style for the submit button */
+.type2_button {
+  background-color: #007bff; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding inside button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: 10px; /* Margin on top */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.type2_button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Style for error messages */
+.center p {
+  color: red; /* Red text for errors */
+  margin: 10px 0; /* Margin around paragraph */
+}
+
+/* //// */
+.crypto-details-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-details-container h1 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.crypto-details-container img {
+  display: block;
+  margin: 0 auto 20px;
+  border-radius: 50%; /* Makes the image round */
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+.crypto-details-container p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee; /* Adds a light separator */
+  padding-bottom: 10px;
+}
+
+/* Last paragraph doesn't need a border */
+.crypto-details-container p:last-child {
+  border-bottom: none;
+}
+
+/* Styling for positive and negative price changes */
+.price-up {
+  color: #4caf50;
+}
+
+.price-down {
+  color: #f44336;
+}
+/* ////////   */
+.crypto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ul {
+  list-style-type: none; /* Removes default list styling */
+  padding: 0;
+  display: flex; /* Uses flexbox to create a horizontal layout */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on small screens */
+  justify-content: space-around; /* Distributes space around items */
+  align-items: center; /* Vertically centers items in their flex container */
+}
+
+.li {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd; /* Adds a border to each item */
+  border-radius: 5px; /* Rounds the corners of the border */
+  width: 200px; /* Sets a fixed width for each item */
+  background-color: #f9f9f9; /* Sets a background color */
+  text-align: center; /* Centers the text inside each item */
+  display: flex; /* Enables flexbox for content alignment */
+  flex-direction: column; /* Stacks flex items vertically */
+  justify-content: center; /* Centers flex items along the main axis */
+  align-items: center; /* Centers flex items along the cross axis */
+}
+
+.img {
+  width: 50px; /* Sets a fixed width */
+  height: auto; /* Maintains the aspect ratio */
+  margin-bottom: 10px; /* Adds space below the image */
+}
+
+.crypto-name,
+.crypto-price {
+  margin-bottom: 5px; /* Adds space below the text */
+}
+
+.crypto-symbol {
+  font-style: italic;
+}
+/* ///   */
+
+.news-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.news-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.news-title {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.news-description {
+  margin-bottom: 10px;
+}
+
+.news-image {
+  width: 100%; /* Full width of the container */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.news-source a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pagination-controls a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+/* Add any additional styles for hover effects, active page, etc. */
+
+/* /////////// */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #007bff;
+  color: #ffffff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #d4d4d4;
+}
+
+.logo img {
+  width: 60px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    width: 50px;
+  }
+}
+
+li a.profile,
+li a.admin {
+  background-color: #ffc107;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+li a.profile:hover,
+li a.admin:hover {
+  background-color: #e0a800;
+}
+
+li a.login,
+li a.register {
+  background-color: #28a745;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+li a.login:hover,
+li a.register:hover {
+  background-color: #218838;
+}
+.anime_form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.anime_form input[type="text"] {
+  width: 70%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+}
+
+.anime_form input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.anime_form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.anime_form button:hover {
+  background-color: #0056b3;
+}

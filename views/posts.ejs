@@ -1,0 +1,101 @@
+<%- include('base') %>
+<div>
+  <% if (loggedIn) { %>
+  <section class="post-section">
+    <h2 class="post-heading">Add New Post</h2>
+    <form
+      action="/posts"
+      method="POST"
+      class="post-form"
+      enctype="multipart/form-data"
+    >
+      <div class="form-group">
+        <label for="title" class="form-label">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="form-input"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="description" class="form-label">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="4"
+          class="form-textarea"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="images" class="form-label">Upload Images:</label>
+        <input
+          type="file"
+          id="images"
+          name="images"
+          class="form-input"
+          multiple
+        />
+      </div>
+      <button type="submit" class="form-button">Submit</button>
+    </form>
+  </section>
+  <% } else { %>
+  <p class="login-prompt">
+    Please <a href="/login" class="login-link">login</a> to add a post.
+  </p>
+  <% } %> <% if(posts && posts.length > 0) { %>
+  <div class="grid-container">
+    <% posts.forEach((post, index) => { %>
+    <section class="post">
+      <h2 class="post-title"><%= post.title %></h2>
+      <p class="post-description"><%= post.description %></p>
+      <% if(post.images && post.images.length > 0) { %>
+      <div class="carousel-container" id="carousel<%= index %>">
+        <div class="carousel-slide">
+          <% post.images.forEach((image, idx) => { %>
+          <img
+            src="<%= image %>"
+            alt="Post Image"
+            class="post-image <%= idx === 0 ? 'active' : '' %>"
+          />
+          <% }) %>
+        </div>
+        <button
+          class="carousel-button left"
+          onclick="moveSlide('carousel<%= index %>', -1)"
+        >
+          &lt;
+        </button>
+        <button
+          class="carousel-button right"
+          onclick="moveSlide('carousel<%= index %>', 1)"
+        >
+          &gt;
+        </button>
+      </div>
+      <% } %>
+    </section>
+    <% }) %>
+  </div>
+  <% } else { %>
+  <p>No posts found.</p>
+  <% } %>
+  <script>
+    function moveSlide(carouselId, direction) {
+      const carousel = document.getElementById(carouselId)
+      const images = carousel.querySelectorAll(".post-image")
+      let activeIdx = 0
+      images.forEach((img, idx) => {
+        if (img.classList.contains("active")) {
+          img.classList.remove("active")
+          activeIdx = idx
+        }
+      })
+      const nextIdx = (activeIdx + direction + images.length) % images.length
+      images[nextIdx].classList.add("active")
+    }
+  </script>
+</div>

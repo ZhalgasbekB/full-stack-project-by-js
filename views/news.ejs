@@ -1,0 +1,23 @@
+<%- include('base') %>
+<form class="anime_form" action="/news" method="POST">
+    <input type="text" id="anime_search" name="search" placeholder="Search anime">
+    <button type="submit">Search</button>
+</form>
+
+<div class="news-container">
+    <% if (newsData && newsData.length > 0) { %> 
+        <h1>Latest News</h1>
+      <% } %>
+
+    <div class="news-grid">
+      <% newsData.forEach(function(article) { %>
+        <div class="news-item">
+          <h2 class="news-title"><%= article.title %></h2>
+          <p class="news-description"><%= article.description %></p>
+          <img class="news-image" src="<%= article.urlToImage %>" alt="Article Image" />
+          <p class="news-source">Read more at <a href="<%= article.url %>">source</a></p>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+</div>  

@@ -1,0 +1,24 @@
+<%- include('base') %>
+<div class="crypto-details-container">
+  <h1><%= crypto.name %> (<%= crypto.symbol.toUpperCase() %>)</h1>
+  <img src="<%= crypto.image.large %>" alt="<%= crypto.name %>" style="width: 100px;">
+  
+  <p>Current Price: $<%= crypto.market_data.current_price.usd %></p>
+  <p>Market Cap: $<%= crypto.market_data.market_cap.usd %></p>
+  <p>24h High: $<%= crypto.market_data.high_24h.usd %></p>
+  <p>24h Low: $<%= crypto.market_data.low_24h.usd %></p>
+  <p>Price Change 24h <span class="<%= crypto.market_data.price_change_24h >= 0 ? 'price-up' : 'price-down' %>">$<%= crypto.market_data.price_change_24h %></span></p>
+  <p>Price Change Percentage 24h: <%= crypto.market_data.price_change_percentage_24h %>%</p>
+  <p>Market Cap Change 24h: $<%= crypto.market_data.market_cap_change_24h %></p>
+  <p>Market Cap Change Percentage 24h: <%= crypto.market_data.market_cap_change_percentage_24h %>%</p>
+  <p>Circulating Supply: <%= crypto.market_data.circulating_supply %></p>
+  <p>Total Supply: <%= crypto.market_data.total_supply %></p>
+  <p>Max Supply: <%= crypto.market_data.max_supply %></p>
+  <p>All-Time High (ATH): $<%= crypto.market_data.ath %></p>
+  <p>ATH Change Percentage: <%= crypto.market_data.ath_change_percentage %>%</p>
+  <p>ATH Date: <%= new Date(crypto.market_data.ath_date).toLocaleDateString() %></p>
+  <p>All-Time Low (ATL): $<%= crypto.market_data.atl %></p>
+  <p>ATL Change Percentage: <%= crypto.market_data.atl_change_percentage %>%</p>
+  <p>ATL Date: <%= new Date(crypto.market_data.atl_date).toLocaleDateString() %></p>
+  <p>Last Updated: <%= new Date(crypto.market_data.last_updated).toLocaleString() %></p>
+</div>

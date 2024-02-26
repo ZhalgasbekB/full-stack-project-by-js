@@ -1,0 +1,25 @@
+<%- include('base') %>
+    <div class="center">
+        <h1>Registration</h1>
+
+        <% if (typeof successMessage !== 'undefined') { %>
+            <p style="color: green;"><%= successMessage %></p>
+        <% } %>
+
+        <% if (typeof errorMessage !== 'undefined') { %>
+            <p style="color: red;"><%= errorMessage %></p>
+        <% } %>
+
+        <form action="/register" method="post">
+            <div>
+                <input type="text" name="username" placeholder="Username" value="<%= typeof username !== 'undefined' ? username : '' %>" required>
+            </div>
+            <div>
+                <input type="password" name="password" placeholder="Password" value="<%= typeof password !== 'undefined' ? password : '' %>" required>
+            </div>
+            <div>
+                <input type="password" name="password2" placeholder="Confirm Password" value="<%= typeof password2 !== 'undefined' ? password2 : '' %>" required>
+            </div>
+            <button class="type2_button" type="submit">Register</button>
+        </form>
+    </div>
