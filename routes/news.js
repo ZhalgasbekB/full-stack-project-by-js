@@ -14,9 +14,12 @@ router.post("/", async (req, res) => {
   const searchQuery = req.body.search
 
   try {
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString().split('T')[0];
+
     const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
       searchQuery
-    )}&from=2024-01-26&sortBy=publishedAt&apiKey=d9e7413d5aa94275a46cd533de232fb9`
+    )}&from=${formattedDate}&sortBy=publishedAt&apiKey=d9e7413d5aa94275a46cd533de232fb9`
     const response = await axios.get(url)
 
     const decodedToken = jwt.decode(req.cookies.token)
