@@ -1,0 +1,30 @@
+<%- include('base') %>
+<div class="artist-details">
+  <img
+    src="<%= info.band.image %>"
+    alt="<%= info.band.name %>"
+    class="artist-image"
+  />
+  <h2><%= info.band.name %></h2>
+  <p>Members: <%= info.band.members.join(', ') %></p>
+  <p>Creation Date: <%= info.band.creationDate %></p>
+  <p>First Album: <%= new Date(info.band.firstAlbum).toLocaleDateString() %></p>
+
+  <div class="concerts">
+    <h3>Concert Dates and Locations</h3>
+    <ul>
+      <% Object.entries(info.concerts.datesLocations).forEach(([location,
+      dates]) => { %>
+      <li>
+        <strong
+          ><%= location.replace(/_/g, ' ').replace(/\b(\w)/g, char =>
+          char.toUpperCase()) %>:</strong
+        >
+        <% dates.forEach(date => { %>
+        <span><%= date %></span>
+        <% }) %>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

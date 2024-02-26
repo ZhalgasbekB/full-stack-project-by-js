@@ -1,6 +1,6 @@
 <%- include('base') %>
 <div>
-  <% if (loggedIn) { %>
+  <% if (admin) { %>
   <section class="post-section">
     <h2 class="post-heading">Add New Post</h2>
     <form
@@ -39,6 +39,39 @@
           multiple
         />
       </div>
+      <!-- NEW -->
+      <div class="form-group">
+        <label for="author" class="form-label">Author:</label>
+        <input
+          type="text"
+          id="author"
+          name="author"
+          class="form-input"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="category" class="form-label">Category:</label>
+        <select id="category" name="category" class="form-select" required>
+          <option value="">Select a category</option>
+          <!-- Add your categories here -->
+          <option value="news">News</option>
+          <option value="tutorial">Tutorial</option>
+          <option value="review">Review</option>
+          <!-- Add more categories as needed -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="isDraft" class="form-label">Draft:</label>
+        <input
+          type="checkbox"
+          id="isDraft"
+          name="isDraft"
+          class="form-checkbox"
+        />
+        <span>Check if this is a draft</span>
+      </div>
+      <!-- NEW -->
       <button type="submit" class="form-button">Submit</button>
     </form>
   </section>
@@ -50,8 +83,6 @@
   <div class="grid-container">
     <% posts.forEach((post, index) => { %>
     <section class="post">
-      <h2 class="post-title"><%= post.title %></h2>
-      <p class="post-description"><%= post.description %></p>
       <% if(post.images && post.images.length > 0) { %>
       <div class="carousel-container" id="carousel<%= index %>">
         <div class="carousel-slide">
@@ -77,6 +108,13 @@
         </button>
       </div>
       <% } %>
+      <h2 class="post-title"><%= post.title %></h2>
+      <p class="post-description"><%= post.description %></p>
+      <p class="post-author">Author: <%= post.author %></p>
+      <p class="post-category">Category: <%= post.category %></p>
+      <p class="post-status">
+        Status: <%= post.isDraft ? 'Draft' : 'Published' %>
+      </p>
     </section>
     <% }) %>
   </div>

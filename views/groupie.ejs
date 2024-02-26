@@ -1,0 +1,20 @@
+<%- include('base') %>
+<div class="container">
+  <% if (artistData && artistData.length > 0) { %> <%
+  artistData.forEach(function(artist) { %>
+  <div class="artist-container">
+    <h2><%= artist.name %></h2>
+    <img
+      src="<%= artist.image %>"
+      alt="Image of <%= artist.name %>"
+      class="artist-image"
+    />
+    <p>Members: <%= artist.members.join(', ') %></p>
+    <p>Creation Date: <%= artist.creationDate %></p>
+    <p>First Album: <%= artist.firstAlbum %></p>
+    <a href="/groupie/<%= artist.artistId%>">Concerts</a>
+  </div>
+  <% }); %> <% } else { %>
+  <p>No artists found.</p>
+  <% } %>
+</div>

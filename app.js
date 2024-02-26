@@ -73,6 +73,7 @@ app.use("/news", verifyToken, require("./routes/news"))
 app.use("/rickAndMorty", verifyToken, require("./routes/rickAndMorty"))
 app.use("/crypto", verifyToken, require("./routes/crypto"))
 app.use("/profile", verifyToken, require("./routes/profile"))
+app.use("/groupie", verifyToken, require("./routes/groupie"))
 
 app.use((req, res, next) => {
   res.status(404).send("<center><h1>404 Not Found</h1></center>")
