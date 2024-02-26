@@ -28,7 +28,7 @@
 }
 
 .concerts h3 {
-  color: #007bff;
+  color: #000;
   margin-top: 20px;
 }
 
@@ -60,11 +60,8 @@
 /* ARTIST */
 .container {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(250px, 1fr)
-  ); /* Creates a responsive grid */
-  gap: 20px; /* Spacing between grid items */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .artist-container {
@@ -84,7 +81,7 @@
 }
 
 h2 {
-  color: #007bff;
+  color: #000;
 }
 
 p {
@@ -92,7 +89,7 @@ p {
 }
 
 a {
-  color: #007bff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -112,8 +109,10 @@ a:hover {
 .post {
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  border-radius: 20px;
   overflow: hidden;
+  /* padding: 5px; */
+  /* margin-bottom: 20px; */
 }
 
 .carousel-container {
@@ -187,7 +186,7 @@ a:hover {
 }
 
 .form-button {
-  background-color: #007bff;
+  background-color: #000;
   color: white;
   padding: 10px 15px;
   border: none;
@@ -196,7 +195,7 @@ a:hover {
 }
 
 .form-button:hover {
-  background-color: #0056b3;
+  background-color: #000;
 }
 
 .post-section {
@@ -207,20 +206,20 @@ a:hover {
   color: #333;
 }
 
-.post {
+/* .post {
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 15px;
   margin-bottom: 20px;
-}
+} */
 
 .post-title {
   margin: 0 0 10px 0;
-  color: #007bff;
+  color: #000;
 }
 
 .post-description {
-  margin: 0;
+  margin-left: 0;
 }
 
 .login-prompt {
@@ -229,7 +228,7 @@ a:hover {
 }
 
 .login-link {
-  color: #007bff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -277,7 +276,7 @@ a:hover {
 }
 
 .form-button {
-  background-color: #0056b3;
+  background-color: #000;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -287,7 +286,7 @@ a:hover {
 }
 
 .form-button:hover {
-  background-color: #004494;
+  background-color: #000;
 }
 
 .login-prompt {
@@ -295,7 +294,7 @@ a:hover {
 }
 
 .login-link {
-  color: #0056b3;
+  color: #000;
   text-decoration: none;
 }
 
@@ -337,14 +336,12 @@ p {
   margin-bottom: 10px;
 }
 
-/* Error message styles */
 .error-message {
   text-align: center;
   color: #cc0000;
   margin-top: 20px;
 }
 
-/* Additional styles for aesthetic enhancements */
 p.status,
 p.species,
 p.gender,
@@ -395,9 +392,7 @@ p.location {
   color: red;
   font-weight: bold;
 }
-/* kdgevxljdghvedhk */
 
-/* Center everything in <div class="center"> */
 .center {
   display: flex;
   flex-direction: column;
@@ -407,38 +402,35 @@ p.location {
   padding: 20px;
 }
 
-/* Style for <h1> inside .center */
 .center h1 {
   margin-bottom: 20px;
 }
 
-/* General style for input fields */
 .center input[type="text"],
 .center input[type="password"] {
-  width: 100%; /* Full width */
-  padding: 10px; /* Padding inside input */
-  margin: 10px 0; /* Margin around each input */
-  border: 1px solid #ccc; /* Light grey border */
-  border-radius: 5px; /* Rounded corners */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
 }
 
-/* Style for the submit button */
 .type2_button {
-  background-color: #007bff; /* Blue background */
-  color: white; /* White text */
-  padding: 10px 20px; /* Padding inside button */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  margin-top: 10px; /* Margin on top */
-  width: 100%; /* Full width */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-  transition: background-color 0.3s; /* Smooth transition for background color */
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
 }
 
 .type2_button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
+  background-color: #000; /* Darker blue on hover */
 }
 
 /* Style for error messages */
@@ -567,7 +559,7 @@ p.location {
 
 .news-title {
   margin-bottom: 10px;
-  color: #007bff;
+  color: #000;
 }
 
 .news-description {
@@ -581,7 +573,7 @@ p.location {
 }
 
 .news-source a {
-  color: #007bff;
+  color: #000;
   text-decoration: none;
 }
 
@@ -594,7 +586,7 @@ p.location {
 .pagination-controls a {
   margin: 0 5px;
   text-decoration: none;
-  color: #007bff;
+  color: #000;
 }
 
 /* Add any additional styles for hover effects, active page, etc. */
@@ -614,7 +606,7 @@ body {
 }
 
 header {
-  background-color: #007bff;
+  background-color: #000;
   color: #ffffff;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -702,13 +694,13 @@ li a.register:hover {
 
 .anime_form input[type="text"]:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
 }
 
 .anime_form button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #000;
   color: white;
   border: none;
   border-radius: 4px;
@@ -718,5 +710,5 @@ li a.register:hover {
 }
 
 .anime_form button:hover {
-  background-color: #0056b3;
+  background-color: #000;
 }
