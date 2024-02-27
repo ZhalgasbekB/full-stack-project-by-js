@@ -14,8 +14,9 @@ router.post("/", async (req, res) => {
   const searchQuery = req.body.search
 
   try {
-    const currentDate = new Date();
-    const formattedDate = currentDate.toISOString().split('T')[0];
+    const currentDate = new Date()
+    currentDate.setMonth(currentDate.getMonth() - 1)
+    const formattedDate = currentDate.toISOString().split("T")[0]
 
     const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(
       searchQuery
