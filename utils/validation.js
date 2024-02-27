@@ -4,7 +4,7 @@ const User = require('../models/User');
 
 async function validateRegistration(username, password, password2) {
     if (username.length < 6) {
-        return { success: false, message: 'Username should be at least 4 characters long' };
+        return { success: false, message: 'Username should be at least 6 characters long' };
     }
     try {
         const existingUser = await User.findOne({ username });
