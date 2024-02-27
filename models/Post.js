@@ -1,9 +1,6 @@
 const mongoose = require("mongoose")
 
 const postSchema = new mongoose.Schema({
-  //   userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-  //   posts: [
-  //     {
   title: {
     type: String,
     required: true,
@@ -26,11 +23,6 @@ const postSchema = new mongoose.Schema({
   },
   category: { type: String, required: true },
   isDraft: { type: Boolean, default: true },
-
-  // },
-  //   ],
-  //     },
-  //   ],
 })
 
 const Post = mongoose.model("Post", postSchema)

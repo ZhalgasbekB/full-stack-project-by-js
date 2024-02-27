@@ -1,0 +1,40 @@
+<%- include('base') %>
+<div class="edit">
+    <form action="/update/<%= post._id %>" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" value="<%= post.title %>" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" required><%= post.description %></textarea>
+        </div>
+        <div class="form-group">
+            <label for="images" class="form-label">Upload Images:</label>
+            <input type="file" id="images" name="images"  class="form-input" multiple />
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="<%= post.author %>" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="news" <%= post.category === 'news' ? 'selected' : '' %>>News</option>
+                <option value="tutorial" <%= post.category === 'tutorial' ? 'selected' : '' %>>Tutorial</option>
+                <option value="review" <%= post.category === 'review' ? 'selected' : '' %>>Review</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="isDraft">Draft:</label>
+            <input type="checkbox" id="isDraft" name="isDraft" <%= post.isDraft ? 'checked' : '' %>>
+            <span>Check if this is a draft</span>
+        </div>
+        <button type="submit">Update Post</button>
+    </form>
+    <form  action="/delete/<%= post._id %>"  method="POST">
+        <button id="delete-btn" type="submit">Delete Post</button>
+    </form>
+</div>
+   
